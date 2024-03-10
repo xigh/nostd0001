@@ -1,0 +1,19 @@
+[package]
+name = "nostd0001"
+version = "0.1.0"
+edition = "2021"
+
+[toolchain]
+channel = "nightly"
+components = [ "rustfmt", "clippy" ]
+
+[target.'cfg(target_os = "linux")']
+rustflags = ["-C", "link-arg=-nostartfiles"]
+
+[dependencies]
+
+# [profile.dev]
+# panic = "abort"
+
+# [profile.release]
+# panic = "abort"
